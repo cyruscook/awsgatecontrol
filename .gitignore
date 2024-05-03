@@ -2,6 +2,7 @@
 .terraform*
 *.tfstate*
 *.tfvars
+backend.tf
 build/
 open_lambda_code/package
 open_lambda_code/lambda_deployment.zip
