@@ -2,14 +2,18 @@ variable "region" {
   type = string
 }
 
+variable "backend_bucket" {
+  type = string
+}
+
 provider "aws" {
   region = var.region
 }
 
 terraform {
   backend "s3" {
-    bucket = "gates-terraform-backend-42853"
+    bucket = var.backend_bucket
     key    = "terraformstate"
-    region = "eu-west-1"
+    region = var.region
   }
 }

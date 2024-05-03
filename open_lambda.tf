@@ -59,7 +59,7 @@ resource "aws_iam_role_policy_attachment" "start_policy_attach" {
 }
 
 resource "aws_lambda_function" "gate_open_lambda" {
-  function_name    = "vw_start"
+  function_name    = "gate_control"
   filename         = "${path.module}/open_lambda_code/lambda_deployment.zip"
   source_code_hash = filesha256("${path.module}/open_lambda_code/lambda_deployment.zip")
   role             = aws_iam_role.start_iam.arn
